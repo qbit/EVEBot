@@ -59,12 +59,12 @@ def notify(type, title, msg, icon)
     g.notify( type, title, msg, :icon => icon)
 end
 
-#icon = getImage(CHARACTERID)
+icon = getImage(CHARACTERID)
 
 training = getcharXml
 skill_ref = getskillXml('3232')
 time = training['currentTime'].to_s
-#currentSkill = training['result'][0]['trainingTypeID'][0]
+currentSkill = training['result'][0]['trainingTypeID'][0]
 
 
 twit = Twitter::Base.new('twitterusername', 'twitterpassword').update('training ' + currentSkill );
